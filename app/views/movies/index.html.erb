@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="movies">
+        <% if @movies.any? %>
+          <% @movies.each do |movie| %>
+            <h4>
+                <%= movie.title %>
+                <small>
+                    (<%= movie.director.first_name %> 
+                    <%= movie.director.last_name %>)
+                </small>
+            </h4>
+            <p><%= movie.synopsis %></p>
+          <% end %>
+        <% else %>
+          <em>Sorry, no movies found.</em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
